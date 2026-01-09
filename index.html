@@ -1,0 +1,127 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donovan - Software Engineer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <canvas id="particles"></canvas> <!-- Advanced particle background -->
+
+    <section id="hero" class="section">
+        <h1 class="tilt">Donovan</h1>
+        <p class="tilt typewriter"></p> <!-- Typing animation here -->
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="card" id="about-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Who I Am</h3>
+                    <p>I'm Donovan, a passionate software engineer with expertise in modern technologies and scalable solutions.</p>
+                </div>
+                <div class="card-back">
+                    <h3>My Focus</h3>
+                    <p>Building high-performance applications with a emphasis on innovation, efficiency, and user-centric design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item glowing">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
+                Python
+            </div>
+            <div class="skill-item glowing">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js Logo">
+                Next.js
+            </div>
+            <div class="skill-item glowing">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo">
+                TypeScript
+            </div>
+            <div class="skill-item glowing">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP Logo">
+                PHP
+            </div>
+            <div class="skill-item glowing">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg" alt="Go Logo">
+                Go
+            </div>
+            <div class="skill-item glowing">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB Logo">
+                MongoDB
+            </div>
+            <div class="skill-item glowing">And Many More...</div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card tilt">
+                <h3>Project 1</h3>
+                <p>Advanced Web App built with Next.js and MongoDB for real-time data processing.</p>
+                <button class="details-btn">View Details</button>
+            </div>
+            <div class="project-card tilt">
+                <h3>Project 2</h3>
+                <p>Scalable Backend Service in Go integrated with TypeScript frontend.</p>
+                <button class="details-btn">View Details</button>
+            </div>
+            <div class="project-card tilt">
+                <h3>Project 3</h3>
+                <p>Data Pipeline using Python and PHP for efficient data handling.</p>
+                <button class="details-btn">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Donovan. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://x.com/Donovan" target="_blank">X (Twitter)</a>
+            <!-- Add more socials as needed -->
+        </div>
+    </footer>
+
+    <button id="back-to-top">↑</button>
+
+    <!-- Modal for project details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Project Details</h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
