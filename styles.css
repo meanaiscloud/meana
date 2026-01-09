@@ -1,0 +1,447 @@
+/* styles.css */
+:root {
+    --primary-black: #000000;
+    --primary-red: #FF0000;
+    --secondary-red: #CC0000;
+    --text-white: #FFFFFF;
+    --text-gray: #CCCCCC;
+    --shadow-color: rgba(255, 0, 0, 0.5);
+    --particle-color: rgba(255, 0, 0, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--primary-black);
+    color: var(--text-white);
+    overflow-x: hidden;
+    perspective: 1000px;
+    position: relative;
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Scroll Animations */
+.section {
+    opacity: 0;
+    transform: translateY(50px) rotateX(10deg);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+/* Hero Section with Parallax and 3D Tilt */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--secondary-red) 0%, var(--primary-black) 100%);
+    opacity: 0.3;
+    transform: translateZ(-50px);
+}
+
+#hero h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s ease, color 0.5s ease;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    z-index: 1;
+}
+
+/* Typewriter Effect */
+.typewriter::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Navigation with Advanced Hover */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+nav.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-red);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-red);
+    transform: translateY(-3px);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* About Section with 3D Card Flip */
+#about {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 2rem auto;
+    perspective: 1500px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-black);
+    border: 2px solid var(--primary-red);
+    box-shadow: 0 0 20px var(--shadow-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Skills Section with Hover Scale, Glow, and Logos */
+#skills {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background: var(--primary-black);
+    border: 1px solid var(--primary-red);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    box-shadow: 0 0 10px var(--shadow-color);
+    border-radius: 8px;
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.skill-item:hover {
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 0 40px var(--shadow-color);
+    border-color: var(--secondary-red);
+}
+
+.skill-item:hover img {
+    transform: rotate(-8deg);
+}
+
+/* Projects Section with Grid and Tilt Cards */
+#projects {
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--primary-black);
+    border: 1px solid var(--primary-red);
+    padding: 2rem;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 0 15px var(--shadow-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 30px var(--shadow-color);
+}
+
+.details-btn {
+    background: var(--primary-red);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.details-btn:hover {
+    background: var(--secondary-red);
+    transform: scale(1.1);
+}
+
+/* Contact Section with Form Animations */
+#contact {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    background: var(--primary-black);
+    border: 1px solid var(--primary-red);
+    color: var(--text-white);
+    padding: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--secondary-red);
+    box-shadow: 0 0 15px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+button {
+    background: var(--primary-red);
+    color: var(--text-white);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: var(--secondary-red);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.social-links a {
+    color: var(--primary-red);
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-red);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-red);
+    color: var(--text-white);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 50%;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    animation: fadeIn 0.5s;
+}
+
+.modal-content {
+    background-color: var(--primary-black);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-red);
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 20px var(--shadow-color);
+    border-radius: 10px;
+    transform: translateY(-50px);
+    transition: transform 0.5s ease;
+}
+
+.modal.visible .modal-content {
+    transform: translateY(0);
+}
+
+.close {
+    color: var(--text-white);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--primary-red);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Advanced Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--shadow-color); }
+    50% { box-shadow: 0 0 25px var(--shadow-color); }
+    100% { box-shadow: 0 0 5px var(--shadow-color); }
+}
+
+.glowing {
+    animation: glow 2s infinite ease-in-out;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 3rem;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
