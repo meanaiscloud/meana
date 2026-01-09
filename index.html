@@ -1,259 +1,171 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donovan - Software Engineer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Portfolio of Donovan, a skilled software engineer specializing in Python, Next.js, TypeScript, PHP, Go, MongoDB, and more.">
-    <meta name="keywords" content="software engineer, portfolio, Donovan, Python, Next.js, TypeScript, PHP, Go, MongoDB">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donovan — Software Engineer</title>
+  <meta name="description" content="Donovan — Full-stack software engineer specializing in Python, Next.js, TypeScript, Go, MongoDB & modern web technologies."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <nav id="main-nav">
-        <div class="nav-container">
-            <div class="logo">Donovan</div>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="theme-toggle">
-                <input type="checkbox" id="theme-switch">
-                <label for="theme-switch"></label>
-            </div>
-        </div>
+  <!-- Navigation -->
+  <header class="nav-header">
+    <nav class="nav-container">
+      <div class="logo">Donovan</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <div id="scroll-progress"></div>
-
-    <canvas id="particles"></canvas>
-
-    <section id="hero" class="section parallax-bg">
-        <div class="hero-content tilt">
-            <h1>Donovan</h1>
-            <p class="typewriter"></p>
-            <a href="#contact" class="cta-btn">Get in Touch</a>
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1 class="reveal">Donovan</h1>
+        <p class="subtitle reveal delay-1">Software Engineer • Systems Builder</p>
+        <div class="hero-cta reveal delay-2">
+          <a href="#contact" class="btn primary">Get in Touch</a>
+          <a href="resume.pdf" download class="btn outline">Résumé</a>
         </div>
-        <div class="mouse-scroll"></div>
+      </div>
     </section>
 
+    <!-- About -->
     <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>I'm Donovan, a dedicated software engineer with over 5 years of experience in building robust and scalable applications. My passion lies in solving complex problems using cutting-edge technologies.</p>
-                <p>I specialize in full-stack development, with a strong focus on backend systems and database optimization.</p>
-            </div>
-            <div class="card" id="about-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h3>Professional Summary</h3>
-                        <p>Expert in modern web technologies and cloud-native solutions.</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Personal Interests</h3>
-                        <p>AI enthusiast, open-source contributor, and avid hiker.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="section-header">
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a full-stack software engineer with a passion for building performant, scalable systems and delightful user experiences.</p>
+          <p>Currently focused on TypeScript ecosystems (Next.js, React), backend performance (Go), and modern data infrastructure (MongoDB, PostgreSQL).</p>
+          <p>Previously: high-throughput services, real-time applications, developer tooling, and occasional deep dives into systems programming.</p>
         </div>
-        <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+        <div class="tech-stack-badges">
+          <span class="badge">TypeScript</span>
+          <span class="badge">Next.js</span>
+          <span class="badge">Go</span>
+          <span class="badge">React</span>
+          <span class="badge">MongoDB</span>
+          <span class="badge">Python</span>
+        </div>
+      </div>
     </section>
 
+    <!-- Skills -->
     <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
-                Python
-                <div class="skill-progress"><div style="width: 95%;"></div></div>
-            </div>
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js Logo">
-                Next.js
-                <div class="skill-progress"><div style="width: 90%;"></div></div>
-            </div>
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo">
-                TypeScript
-                <div class="skill-progress"><div style="width: 85%;"></div></div>
-            </div>
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP Logo">
-                PHP
-                <div class="skill-progress"><div style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg" alt="Go Logo">
-                Go
-                <div class="skill-progress"><div style="width: 88%;"></div></div>
-            </div>
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB Logo">
-                MongoDB
-                <div class="skill-progress"><div style="width: 92%;"></div></div>
-            </div>
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo">
-                React
-                <div class="skill-progress"><div style="width: 90%;"></div></div>
-            </div>
-            <div class="skill-item glowing">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript Logo">
-                JavaScript
-                <div class="skill-progress"><div style="width: 95%;"></div></div>
-            </div>
-            <div class="skill-item glowing">And Many More...</div>
+      <div class="section-header">
+        <h2>Core Technologies</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/>
+          <span>TypeScript</span>
         </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" alt="Next.js"/>
+          <span>Next.js</span>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" alt="Go"/>
+          <span>Go</span>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="React"/>
+          <span>React</span>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
+          <span>Python</span>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB"/>
+          <span>MongoDB</span>
+        </div>
+      </div>
     </section>
 
-    <section id="experience" class="section">
-        <h2>Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Senior Software Engineer</h3>
-                    <p>Tech Corp, 2022 - Present</p>
-                    <p>Led development of scalable microservices architecture.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Full Stack Developer</h3>
-                    <p>Innovate Inc, 2020 - 2022</p>
-                    <p>Built e-commerce platform using Next.js and MongoDB.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Junior Developer</h3>
-                    <p>StartUp Labs, 2018 - 2020</p>
-                    <p>Developed backend APIs in Go and PHP.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Projects -->
     <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card tilt">
-                <img src="https://placehold.co/300x200" alt="Project 1">
-                <h3>Project 1: Real-Time Analytics Dashboard</h3>
-                <p>Built with Next.js, TypeScript, and MongoDB for data visualization.</p>
-                <button class="details-btn">View Details</button>
+      <div class="section-header">
+        <h2>Selected Work</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image placeholder"></div>
+          <div class="project-content">
+            <h3>Real-Time Analytics Platform</h3>
+            <p>Next.js 14 • TypeScript • tRPC • MongoDB • Redis • Chart.js</p>
+            <div class="project-tags">
+              <span>Full-Stack</span><span>Real-time</span><span>Performance</span>
             </div>
-            <div class="project-card tilt">
-                <img src="https://placehold.co/300x200" alt="Project 2">
-                <h3>Project 2: API Gateway in Go</h3>
-                <p>High-performance API service handling millions of requests.</p>
-                <button class="details-btn">View Details</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image placeholder"></div>
+          <div class="project-content">
+            <h3>High-Throughput API Gateway</h3>
+            <p>Go • Gin • PostgreSQL • Redis • Prometheus • Grafana</p>
+            <div class="project-tags">
+              <span>Backend</span><span>Microservices</span><span>Observability</span>
             </div>
-            <div class="project-card tilt">
-                <img src="https://placehold.co/300x200" alt="Project 3">
-                <h3>Project 3: Machine Learning Pipeline in Python</h3>
-                <p>Data processing and model training pipeline.</p>
-                <button class="details-btn">View Details</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image placeholder"></div>
+          <div class="project-content">
+            <h3>Developer Productivity Suite</h3>
+            <p>Python • FastAPI • React • TypeScript • Docker</p>
+            <div class="project-tags">
+              <span>Tools</span><span>Automation</span><span>DX</span>
             </div>
-            <div class="project-card tilt">
-                <img src="https://placehold.co/300x200" alt="Project 4">
-                <h3>Project 4: E-Commerce Backend in PHP</h3>
-                <p>Robust backend for online store with payment integration.</p>
-                <button class="details-btn">View Details</button>
-            </div>
-        </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="testimonials" class="section">
-        <h2>Testimonials</h2>
-        <div class="testimonial-carousel">
-            <div class="testimonial-item">
-                <p>"Donovan is an exceptional engineer with innovative solutions."</p>
-                <cite>- Colleague A</cite>
-            </div>
-            <div class="testimonial-item">
-                <p>"His code is clean, efficient, and scalable."</p>
-                <cite>- Manager B</cite>
-            </div>
-            <div class="testimonial-item">
-                <p>"Great collaborator and quick learner."</p>
-                <cite>- Client C</cite>
-            </div>
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+      <div class="section-header">
+        <h2>Let's Build Something</h2>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Name" required/>
         </div>
-        <div class="carousel-controls">
-            <button id="prev-testimonial">&lt;</button>
-            <button id="next-testimonial">&gt;</button>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email" required/>
         </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
     </section>
+  </main>
 
-    <section id="blog" class="section">
-        <h2>Blog</h2>
-        <div class="blog-grid">
-            <div class="blog-post">
-                <h3>Mastering Go Concurrency</h3>
-                <p>Exploring goroutines and channels for efficient programming.</p>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-post">
-                <h3>Next.js Best Practices</h3>
-                <p>Tips for building performant React applications.</p>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-post">
-                <h3>MongoDB Optimization Techniques</h3>
-                <p>Scaling your database for high-traffic apps.</p>
-                <a href="#">Read More</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Name" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="text" id="subject" placeholder="Subject" required>
-            <textarea id="message" placeholder="Message" required></textarea>
-            <div class="recaptcha">reCAPTCHA placeholder</div>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Donovan. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://x.com/Donovan" target="_blank" class="social-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="X"></a>
-            <a href="https://linkedin.com/in/donovan" target="_blank" class="social-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"></a>
-            <a href="https://github.com/donovan" target="_blank" class="social-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"></a>
-            <a href="https://instagram.com/donovan" target="_blank" class="social-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
-        </div>
-    </footer>
-
-    <button id="back-to-top">↑</button>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="modal-title">Project Details</h3>
-            <img id="modal-image" src="" alt="Project Image">
-            <p id="modal-description"></p>
-            <a id="modal-link" href="#" target="_blank">View Live Demo</a>
-        </div>
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 Donovan. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" aria-label="GitHub">GitHub</a>
+        <a href="https://x.com" target="_blank" aria-label="X">X</a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+      </div>
     </div>
+  </footer>
 
-    <div id="mouse-trail"></div>
-
-    <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
