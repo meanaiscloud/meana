@@ -5,16 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donovan — Software Engineer</title>
   <meta name="description" content="Donovan — Full-stack software engineer specializing in Python, Next.js, TypeScript, Go, MongoDB, Lua, Luau & modern web technologies."/>
+  <meta property="og:title" content="Donovan — Software Engineer" />
+  <meta property="og:description" content="Full-stack software engineer specializing in modern technologies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="cookie-consent" class="cookie-consent">
+    <p>We use cookies to improve your experience. <button id="accept-cookies">Accept</button></p>
+  </div>
+
   <!-- Navigation -->
   <header class="nav-header">
     <nav class="nav-container">
       <div class="logo">Donovan</div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -23,15 +38,16 @@
         <li><a href="#roblox">Roblox Profile</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero parallax">
       <div class="hero-content">
         <h1 class="reveal">Donovan</h1>
-        <p class="subtitle reveal delay-1">Software Engineer • Systems Builder</p>
+        <p class="subtitle typing reveal delay-1"></p>
         <div class="hero-cta reveal delay-2">
           <a href="#contact" class="btn primary">Get in Touch</a>
           <a href="resume.pdf" download class="btn outline">Résumé</a>
@@ -68,32 +84,32 @@
         <h2>Core Technologies</h2>
       </div>
       <div class="skills-grid">
-        <div class="skill-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/>
+        <div class="skill-card" role="img" aria-label="TypeScript">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"/>
           <span>TypeScript</span>
         </div>
-        <div class="skill-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" alt="Next.js"/>
+        <div class="skill-card" role="img" aria-label="Next.js">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js"/>
           <span>Next.js</span>
         </div>
-        <div class="skill-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" alt="Go"/>
+        <div class="skill-card" role="img" aria-label="Go">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go"/>
           <span>Go</span>
         </div>
-        <div class="skill-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original-wordmark.svg" alt="Lua/Luau"/>
+        <div class="skill-card" role="img" aria-label="Lua/Luau">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original-wordmark.svg" alt="Lua/Luau"/>
           <span>Lua/Luau</span>
         </div>
-        <div class="skill-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="React"/>
+        <div class="skill-card" role="img" aria-label="React">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="React"/>
           <span>React</span>
         </div>
-        <div class="skill-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
+        <div class="skill-card" role="img" aria-label="Python">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python"/>
           <span>Python</span>
         </div>
-        <div class="skill-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB"/>
+        <div class="skill-card" role="img" aria-label="MongoDB">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB"/>
           <span>MongoDB</span>
         </div>
       </div>
@@ -104,34 +120,38 @@
       <div class="section-header">
         <h2>Selected Work</h2>
       </div>
+      <input type="search" id="project-search" placeholder="Search projects..." aria-label="Search projects">
       <div class="projects-grid">
-        <article class="project-card">
+        <article class="project-card" data-tags="full-stack real-time performance">
           <div class="project-content">
             <h3>Real-Time Analytics Platform</h3>
             <p>Next.js 14 • TypeScript • tRPC • MongoDB • Redis • Chart.js</p>
             <div class="project-tags">
               <span>Full-Stack</span><span>Real-time</span><span>Performance</span>
             </div>
+            <button class="details-btn" aria-label="View details">Details</button>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-tags="backend microservices observability">
           <div class="project-content">
             <h3>High-Throughput API Gateway</h3>
             <p>Go • Gin • PostgreSQL • Redis • Prometheus • Grafana</p>
             <div class="project-tags">
               <span>Backend</span><span>Microservices</span><span>Observability</span>
             </div>
+            <button class="details-btn" aria-label="View details">Details</button>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-tags="tools automation dx">
           <div class="project-content">
             <h3>Developer Productivity Suite</h3>
             <p>Python • FastAPI • React • TypeScript • Docker</p>
             <div class="project-tags">
               <span>Tools</span><span>Automation</span><span>DX</span>
             </div>
+            <button class="details-btn" aria-label="View details">Details</button>
           </div>
         </article>
       </div>
@@ -142,13 +162,18 @@
       <div class="section-header">
         <h2>Roblox Profile</h2>
       </div>
-      <div id="roblox-profile" class="roblox-profile">
-        <img id="roblox-avatar" src="" alt="Roblox Avatar" class="roblox-avatar"/>
+      <div id="roblox-profile" class="roblox-profile" aria-live="polite">
+        <div class="loader" id="roblox-loader"></div>
+        <p id="roblox-error" class="error-msg" style="display: none;">Failed to load profile.</p>
+        <img id="roblox-avatar" loading="lazy" src="" alt="Roblox Avatar" class="roblox-avatar"/>
         <div class="roblox-info">
           <h3 id="roblox-display-name"></h3>
           <p id="roblox-username"></p>
           <p id="roblox-description"></p>
           <p id="roblox-join-date"></p>
+          <p id="roblox-followers"></p>
+          <p id="roblox-following"></p>
+          <p id="roblox-friends"></p>
         </div>
       </div>
     </section>
@@ -158,22 +183,23 @@
       <div class="section-header">
         <h2>Let's Build Something</h2>
       </div>
-      <form class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form" aria-labelledby="contact-heading">
         <div class="form-group">
-          <input type="text" name="name" placeholder="Name" required/>
+          <input type="text" name="name" placeholder="Name" required aria-required="true"/>
         </div>
         <div class="form-group">
-          <input type="email" name="email" placeholder="Email" required/>
+          <input type="email" name="email" placeholder="Email" required aria-required="true"/>
         </div>
         <div class="form-group">
-          <textarea name="message" placeholder="Message" rows="5" required></textarea>
+          <textarea name="message" placeholder="Message" rows="5" required aria-required="true"></textarea>
         </div>
-        <button type="submit" class="btn primary">Send Message</button>
+        <button type="submit" class="btn primary" disabled>Send Message</button>
+        <p id="form-status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="footer-content">
       <p>© 2026 Donovan. All rights reserved.</p>
       <div class="social-links">
@@ -183,6 +209,26 @@
       </div>
     </div>
   </footer>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" aria-label="Close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <!-- Google Analytics Placeholder -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXX-X');
+  </script>
 
   <script src="script.js" defer></script>
 </body>
